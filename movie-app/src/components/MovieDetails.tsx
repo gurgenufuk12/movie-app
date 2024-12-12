@@ -1,6 +1,6 @@
 import React from "react";
 import { MovieDetail } from "../types";
-import { Grid, Typography} from "@mui/material";
+import { Grid2, Typography } from "@mui/material";
 
 interface MovieDetailsProps {
   movie: MovieDetail;
@@ -8,15 +8,15 @@ interface MovieDetailsProps {
 
 const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
   return (
-    <Grid container spacing={4}>
-      <Grid item xs={12} md={4}>
+    <Grid2 container display={"grid"} gridTemplateColumns={"1fr 2fr"} gap={2}>
+      <Grid2>
         <img
           src={movie.Poster !== "N/A" ? movie.Poster : "/no-image.png"}
           alt={movie.Title}
           style={{ width: "100%" }}
         />
-      </Grid>
-      <Grid item xs={12} md={8}>
+      </Grid2>
+      <Grid2>
         <Typography variant="h4" gutterBottom>
           {movie.Title} ({movie.Year})
         </Typography>
@@ -38,8 +38,8 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
         <Typography variant="body1" gutterBottom>
           {movie.Plot}
         </Typography>
-      </Grid>
-    </Grid>
+      </Grid2>
+    </Grid2>
   );
 };
 
