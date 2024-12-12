@@ -4,6 +4,7 @@ import { fetchMovies } from "../store/moviesSlice";
 import { RootState, AppDispatch } from "../store";
 import SearchBar from "../components/SearchBar";
 import Filters from "../components/Filters";
+import Pagination from "../components/Pagination";
 import MovieList from "../components/MovieList";
 import { CircularProgress, Alert } from "@mui/material";
 
@@ -31,6 +32,11 @@ const HomePage: React.FC = () => {
     setFilters(newFilters);
     setCurrentPage(1);
   };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
   return (
     <div>
       <SearchBar onSearch={handleSearch} />
@@ -38,6 +44,13 @@ const HomePage: React.FC = () => {
       {loading && <CircularProgress />}
       {error && <Alert severity="error">{error}</Alert>}
       {!loading && !error && <MovieList movies={movies} />}
+      {!loading && !error && totalResults > 10 && (
+        <Pagination
+          currentPage={currentPage}
+          totalResults={totalResults}
+          onChange={handlePageChange}
+        />
+      )}
     </div>
   );
 };
