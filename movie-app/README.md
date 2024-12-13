@@ -1,20 +1,26 @@
 Movie-App Installation
 
-1- To start the app first in the root of the project open a new file called .env
+1- To clone repository use the following command on your terminal window
 
-2- Paste the following line in the .env file
+```bash
+git clone https://github.com/gurgenufuk12/InventAI_Case.git
+```
+
+2- To start the app first in the root of the project open a new file called .env
+
+3- Paste the following line in the .env file
 
 ```bash
 VITE_OMDB_API_KEY=be04d48
 ```
 
-3- Inside the project directory run the following command
+4- Inside the project directory run the following command
 
 ```bash
 npm install
 ```
 
-4- To start the client
+5- To start the client
 
 ```bash
 npm run dev
