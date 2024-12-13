@@ -20,6 +20,6 @@ npm install
 npm run dev
 ```
 
-You can now observe the client on localhost:5173 or localhost:5173 depends on your available port 
+You can now observe the client on localhost:5174 or localhost:5173 depends on your available port 
 
 
